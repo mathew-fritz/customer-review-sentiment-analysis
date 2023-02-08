@@ -15,7 +15,6 @@ library(wordcloud2)
 library(syuzhet)
 library(tidyverse)
 
-
 #Reading in data
 
 #load in csv file 
@@ -77,11 +76,17 @@ head(tdm_d, 5)
 #Data visualization based on tdm
 
 #plot of top 5 most frequent words in reviews
-ggplot(tdm_d[1:5,], aes(x = reorder(word, -freq), y = freq, fill = word)) +
+ggplot(tdm_d[1:5,], aes(x = reorder(word, -freq), y = freq, fill = word,
+                        label = freq)) +
   geom_bar(stat = "identity") +
   ggtitle("Amount of Times Words Appear in Reviews") +
   xlab("Words") + 
   ylab("Frequency") +
+  geom_text(vjust = -0.2,
+            color="black",
+            size = 5,
+            fontface="bold",
+  )+
   scale_fill_discrete(breaks=c("hotel", "room", "not", "stay", "great")) +
   theme_minimal()
 
@@ -150,6 +155,24 @@ head(nrcs)
 nrcs = nrcs %>% 
   mutate(percent = frequency/sum(frequency))
 
+#plot showing percentage of positive and negative reviews
+nrcs[9:10,] %>% 
+ggplot(aes(x = reorder(sentiment, -frequency), y = percent, 
+           fill = sentiment, label = scales::percent(percent))) +
+  geom_bar(stat = "identity") +
+  ggtitle("Percentage of Positive and Negative Reviews") +
+  xlab("Sentiments") + 
+  ylab("Frequency") +
+  scale_y_continuous(labels = scales::percent,
+                     limits = c(0,0.3)) +
+  geom_text(nudge_y= .007,
+            color="black",
+            size = 5,
+            fontface="bold",
+  )+
+  guides(fill = guide_legend(reverse = TRUE)) +
+  theme_minimal()
+
 #create indexed version of dataframe above (removing the positive and negative rows)
 nrcs2 = nrcs[1:8,]
 #show new dataframe
@@ -159,7 +182,7 @@ colnames(nrcs2)[1] = "emotion"
 
 #Data visualization of emotion classification
 
-#plot the frequency of words as a percent based on total (emotion column reordered based on descending frequency)
+#plot the frequency of emotions as a percent based on total (emotion column reordered based on descending frequency)
 nrcs2 %>% 
 mutate(emotion = fct_reorder(.f = emotion, .x = frequency)) %>% 
 ggplot(aes(x = emotion, y = percent, fill = emotion, label = scales::percent(percent))) +
