@@ -21,5 +21,3 @@ From performing this analysis, the following observations were made:
 # Takeaways
 
 From the results above, we can see that the majority of customers had a positive experience using TripAdvisor, expressing emotions of trust, joy, and anticipation most often. Clearly, customers enjoy using TripAdvisor to help book their accomdiations for their trips!
-
-# DASHBOARD COMING SOON
