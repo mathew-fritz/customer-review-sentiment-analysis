@@ -1,17 +1,3 @@
-#install required packages
-install.packages("tm")
-install.packages("SnowballC")
-install.packages("syuzhet")
-install.packages("tidyverse")
-install.packages("googlesheets4")
-
-#load required packages
-library(tm)
-library(SnowballC)
-library(syuzhet)
-library(tidyverse)
-library(googlesheets4)
-
 #Reading in data
 
 #load in csv file 
@@ -137,5 +123,3 @@ nrcs2 = nrcs[1:8,]
 head(nrcs2, 8)
 #change column name
 colnames(nrcs2)[1] = "emotion"
-
-
