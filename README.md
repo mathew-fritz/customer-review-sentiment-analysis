@@ -2,7 +2,7 @@
 This project involves analyzing a dataset of TripAdvisor Hotel Reviews and finding out the most common words used within these reviews, along with the most popular emotions expressed in these reviews and whether they are positive or negative. R was used for the analysis.
 
 # About This Project
-The purpose of this Sentiment Analysis was to analyze a dataset of TripAdvisor hotel reviews found here: [TripAdvisor Hotel Reviews] (https://www.kaggle.com/datasets/thedevastator/tripadvisor-hotel-reviews) to try and find out the follow questions:
+The purpose of this Sentiment Analysis was to analyze a dataset of TripAdvisor hotel reviews found here: [TripAdvisor Hotel Reviews](https://www.kaggle.com/datasets/thedevastator/tripadvisor-hotel-reviews) to try and find out the follow questions:
 
 # Questions
 
