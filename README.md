@@ -15,7 +15,7 @@ The purpose of this Sentiment Analysis was to analyze a dataset of TripAdvisor h
 From performing this analysis, the following observations were made:
 
 - "hotel" and "room" were the two most popular words by far (appearing 49330 and 42806 times respectively)
-- 27% of reviews were classified positive, while 10% were negative 
+- 27% of reviews were classified positive, 10% were considered negative, and 63% are considered neutral.
 - trust, joy, and anticipation were the most popular emotions expressed in these reviews (at 15%, 14.61%, and 11.97% respectively) 
 
 # Takeaways
